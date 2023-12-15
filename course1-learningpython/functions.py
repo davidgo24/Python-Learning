@@ -129,3 +129,26 @@ def get_slashed(health, armor=0):
     after_heal = new_health + armor
     return after_heal
 
+'''PRINTING VS RETURNING'''
+#It can be particularly tricky when the test suite we provide prints the output of your functions to the console. 
+# This makes it seem like print() and return are interchangeable, but they are not!
+
+#print(): A function that prints a value to the console. It does not return a value.
+#return: A keyword that does these two things. It does not print anything to the console.
+    #Ends the function execution.
+    #Gives the specified value back to the caller of the function.
+'''PRINTING TO DEBUG YOUR CODE'''
+#Printing values and running your code in the console is a great way to debug your code.
+# You can see what values are stored in various variables, find your mistakes, and fix them. 
+#In the real world it's rare to leave print() statements in your code once you're done debugging.
+
+
+#############
+'''Functions key takeaways'''
+
+#1. Functions make it easy to organize and reuse code
+#2. the return keyword ends the functions execution 
+#3. it also gives the specified value back to the caller of the function.
+#4. the print() function is a great tool in practice for debugging code.
+#5. there is such thing as a 'none' return when NO RETURN VALUE is specified in a function. (function execution is not being ended)
+#6. parameter and argument are wordes used loosely. parameter is used in the definition of a function. 
