@@ -1,4 +1,4 @@
-'''Unit Tests'''
+'''Unit Tests- Testing and Debugging'''
 # a unit test is an automated program that tests a small "unit" of a code. Usually it is a function or two
 
 #ASSIGNMENT (code produced by me)
@@ -73,3 +73,31 @@ main()
 #Console output is ignored, you can leave debug print statements in your code
 #WHICH IS MORE COMMON?
 #Going forward you'll encounter far more unit-test lessons than console output lessons, but you'll still see both from time to time. Different concepts are better suited to different types of lessons.
+
+##--
+
+'''PROCESS FOR SOLVING HARD CODING PROBLEMS'''
+#Read the lesson first! Figure out the examples before writing your own code.
+#Read the assignment. Understand the goal of the assignment before you start writing code.
+#Start writing code.
+#Add print() statements. Don't wait until you've written a lot of code to start testing. Add print() statements and use the Run button to see if your code is doing what you expect at each step. It's easier to find issues in small bits of code than in large blocks of code.
+#Keep running, printing, and fixing until you're confident your code is working.
+#Submit your code. If the assignment you're working on has unit tests, no need to remove your debugging print() statements. If the assignment you're working on is testing console output, be sure to remove your print() statements before submitting.
+#Compare your code to the instructor's. You will not be penalized for looking at the solution after you have successfully completed the assignment.
+
+'''Debugging Practice'''
+#TIP
+#Write a few lines of code, use testing tools such as print() to make sure you are on the right track, then keep writing code
+
+def unlock_achievement(before_xp, ach_xp, ach_name):
+    players_xp = before_xp + ach_xp
+    alert_message = f"Achievement Unlocked: {ach_name}"
+    '''using the print statement below to test'''
+    print("Achievement unlocked:", ach_name)
+    return players_xp, alert_message
+    
+'''Testing and Debugging Recap:'''
+#1. use the print() statement consistently to test code 
+#2. It is easier to find issues in small bits of code, so do not wait until the end. 
+
+  
