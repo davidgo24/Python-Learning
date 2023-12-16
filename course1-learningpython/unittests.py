@@ -100,4 +100,3 @@ def unlock_achievement(before_xp, ach_xp, ach_name):
 #1. use the print() statement consistently to test code 
 #2. It is easier to find issues in small bits of code, so do not wait until the end. 
 
-  
