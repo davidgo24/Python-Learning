@@ -228,3 +228,34 @@ def can_delete_bits(user_permissions):
 
 def can_edit_bits(user_permissions):
     return user_permissions & can_edit_guild
+
+####
+
+#The Bitwise OR operator 
+
+#As you may have guessed,
+# the bitwise OR operator is similar 
+# to the bitwise AND operator in that it 
+# works on binary rather than boolean values. However,
+# the bitwise OR operator ORs the bits together. Here's an example:
+
+0101
+|
+0111
+=
+0111
+
+#ASSIGNMENT 
+def calculate_party_perms(glorfindel, galadriel, elendil, elrond):
+    permission_access = glorfindel | galadriel | elendil | elrond
+    return permission_access
+
+#The NOT operator
+#The not operator reverses the result. It returns False if the input was True and vice-versa.
+
+print(not True)
+# Prints: False
+
+print(not False)
+# Prints: True
+
