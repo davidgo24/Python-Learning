@@ -259,3 +259,28 @@ print(not True)
 print(not False)
 # Prints: True
 
+#NUMBER SYNTAX CHALLENGE
+def main():
+    test(8_000_000, 3_000_000)
+    test(10_000_000, 4_500_000)
+#8,000,000 can be written as 8_000_000 the underscore replace commas in python
+
+#CONVERTING BINARY
+
+def body_parts(num_heads, num_arms, num_fingers):    
+    heads_int = int(num_heads, 2)
+    print(heads_int)
+    arms_int = int(num_arms, 2)
+    print(arms_int)
+    fingers_int = int(num_fingers, 2)
+    print(fingers_int)
+    '''now that our arguments are each stored in a variable 
+    - we can use the int function to convert from a binary string to an integer '''
+    return heads_int, arms_int, fingers_int
+
+
+#Recap on Computing
+#1. Binary is awesome 
+#2. it can be very useful, and is not as complicated as it seems (after you hit your head upside down about it)
+#3. there is useful built-in python logic to work with binary strings, ints and vice versa
+
