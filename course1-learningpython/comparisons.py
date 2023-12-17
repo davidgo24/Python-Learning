@@ -111,3 +111,88 @@ def check_high_score(player_name, high_scoring_player_name, low_scoring_player_n
         return "low"
     else:
         return "neither"
+
+'''Boolean Logic'''
+#Boolean logic refers to logic dealing with boolean (True or False) values. For example,
+
+#Dogs must have four legs and weigh less than 100 kilograms. (Both conditions must be true)
+
+#Cars are cool if they go faster than 200 MPH, or if they are electric. (At least one condition must be true)
+
+#As we discussed earlier, the logical operators and and or can be used to perform boolean logic.
+
+#The and operator returns True if both of the conditions on either side evaluates to True:
+def is_dog(num_legs, weight):
+    return num_legs == 4 and weight < 100
+
+'''#9'''
+def does_attack_hit(attack_roll, armor_class):
+    if (attack_roll != 1 and attack_roll >= armor_class) or (attack_roll == 20):
+        return True
+    else:
+        return False
+         
+'''#10'''
+def should_serve_customer(customer_age, on_break, time):
+    if (time >= 5) and (time <=10) and (not on_break) and (customer_age >= 21):
+        return True
+    else:
+        return False
+        
+'''#11'''
+def check_parking_meter(time_parked, time_purchased):
+    if time_parked >= time_purchased:
+        return "overtime charged"
+    else:
+        return "no charges yet"
+#OR can be written as
+def check_parking_meter(time_parked, time_purchased):
+    if time_parked >= time_purchased:
+        return "overtime charged"
+    return "no charges yet"
+'''#12'''
+#COMBAT ADVANTAGE
+#A new text-based RPG you are building doesn't have any way for players to know if they are strong enough to fight certain enemies.
+
+#If a player's power level is greater than the enemies' defense that player has an advantage
+#If the player's power and enemies' defense are equal they are evenly matched
+#Otherwise, that player has a disadvantage.
+#CHALLENGE
+#On line 4 write an if/elif/else block. It should either set advantage, disadvantage, or evenly_matched to True depending on the values of player_power and enemy_defense.
+
+#For example, if the player's power is greater than the enemy's defense, advantage should be set to True. etc.
+
+def combat_evaluation(player_power, enemy_defense):
+    advantage, disadvantage, evenly_matched = False, False, False #these are our starting arguments
+    if player_power > enemy_defense: 
+        advantage = True #if this test passes, lets flip the switch to true
+    elif player_power == enemy_defense:
+        evenly_matched = True #elif this test passes, lets flip this switch to true 
+    else:
+        disadvantage = True #else flip this switch to true
+    
+    return advantage, disadvantage, evenly_matched
+'''#13'''
+
+#GAS MILEAGE
+#There isn't a gas station between Tyler's house and his work. He is trying to figure out if his car has enough gas to get him to work and back home.
+
+#CHALLENGE
+#Complete the has_enough_gas function.
+
+#Do some Pythonic math to determine how many gallons are needed for Tyler to get to work AND make it back home after he gets off work. Assign the result to a gallons_needed variable.
+
+#Return True if there are at least enough gallons in the tank based on the gallons_needed variable, and False otherwise.
+def has_enough_gas(gallons_in_car, miles_to_work, miles_per_gallon):
+    total_mileage = miles_to_work * 2 #here i am calculating the total distance (mi)
+    gallons_needed = total_mileage / miles_per_gallon #the argument mpg provides the info we need to calc gallons needed
+    if gallons_in_car >= gallons_needed: #now that the math is done, we can use boolean logic to determine if we have enough gas pased on our scenario
+        return True
+    return False
+
+'''Recap'''
+#1. comparisons use boolean logic - true of false
+#2. we can use operators such as: > < >= >= <= == != 
+#3. if statements are a way to set conditions 
+#4. if statements say, only if something is true, execute this code. 
+
