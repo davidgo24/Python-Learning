@@ -36,3 +36,15 @@ def print_numbers():
     for i in range(0,200):
         print(i)
     
+
+'''For Loop Range'''
+#The range() function we've been using in our for loops actually has an optional 3rd parameter: the "step".
+
+for i in range(0, 10, 2):
+    print(i)
+# prints:
+# 0
+# 2
+# 4
+# 6
+# 8
