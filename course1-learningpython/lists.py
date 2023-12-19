@@ -159,3 +159,43 @@ for animal in animals:
     print(f"I like {animal}s.")
 
 #Here, we're just printing each item in the list & there's no need to modify them. This makes the for item in items syntax cleaner and more concise.
+
+'''Find an item in a list using the no-index for loop syntax'''
+def contains_leather_scraps(items):
+    found = False
+
+    # don't touch above this line
+    for item in items:
+        #if item is called leather scraps then switch found from false to true
+        if item == "Leather Scraps":
+            found = True
+            return found
+'''Finding differences in lists'''
+def check_character_levels():
+    old_character_levels = [1, 42, 43, 53, 12, 3, 32, 34, 54, 32, 43]
+    new_character_levels = [1, 42, 45, 54, 12, 3, 32, 38, 54, 32, 43]
+
+    # don't touch above this line
+
+    for i in range(0, len(old_character_levels)):
+        if old_character_levels[i] != new_character_levels[i]:
+            print(i)
+
+'''Finding max'''
+def find_max(nums):
+    max_so_far = float("-inf")
+    for num in range(0, len(nums)):
+        if nums[num] > max_so_far:
+            max_so_far = nums[num]
+    return max_so_far #it is key for this return statement to be outside of the loop
+    #so it can continue checking the entire list.
+        
+'''Modulo Operator in Python'''
+def get_odd_numbers(num):
+    odd_numbers = []
+
+    for i in range(0, num):
+        # don't touch above this line
+        if i % 2 > 0:
+            odd_numbers.append(i)
+    
