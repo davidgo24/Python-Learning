@@ -198,4 +198,46 @@ def get_odd_numbers(num):
         # don't touch above this line
         if i % 2 > 0:
             odd_numbers.append(i)
-    
+'''SLICING Lists'''
+my_list[ start : stop : step ]
+#Example
+scores = [50, 70, 30, 20, 90, 10, 50]
+# Display list
+print(scores[1:5:2])
+# Prints [70, 20]
+#The above reads as "give me a slice of the scores list from index 1, up to but not including 5, skipping every 2nd value. All of the sections are optional.
+
+'''ommitting sections of lists'''
+#You can also omit various sections ("start", "stop", or "step"). 
+# For example, numbers[:3] means "get all items from the start up to (but not including) index 3".
+# numbers[3:] means "get all items from index 3 to the end".
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+numbers[:3] # Gives [0, 1, 2]
+numbers[3:] # Gives [3, 4, 5, 6, 7, 8, 9]
+
+'''USING ONLY THE "STEP" SECTION'''
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+numbers[::2] # Gives [0, 2, 4, 6, 8]
+
+'''NEGATIVE INDICES'''
+#Negative indices count from the end of the list. For example, numbers[-1] gives the last item in the list, numbers[-2] gives the second last item, and so on.
+
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+numbers[-3:] # Gives [7, 8, 9]
+
+'''SLICING LISTS'''
+#when slicing lists, think of counting by the index and not the count. 0,1,2...
+
+def get_champion_slices(champions):
+    return champions[2:], champions[:-2:], champions[::2]
+
+'''LIST OPERATIONS / CONCATENATE'''
+total = [1, 2, 3] + [4, 5, 6]
+print(total)
+# Prints: [1, 2, 3, 4, 5, 6]
+def concatenate_favorites(favorite_weapons, favorite_armor, favorite_items):
+    favorite_weapons
+    favorite_armor
+    favorite_items
+    fav_armory = favorite_weapons + favorite_armor + favorite_items
+    return fav_armory
