@@ -241,3 +241,43 @@ def concatenate_favorites(favorite_weapons, favorite_armor, favorite_items):
     favorite_items
     fav_armory = favorite_weapons + favorite_armor + favorite_items
     return fav_armory
+'''LIST OPERATIONS / CONTAINS "X IN ..." '''
+fruits = ["apple", "orange", "banana"]
+print("banana" in fruits)
+# Prints: True
+
+def is_top_weapon(weapon):
+    top_weapons = [
+        "sword of justice",
+        "sword of slashing",
+        "stabby daggy",
+        "great axe",
+        "silver bow",
+        "spellbook",
+        "spiked knuckles",
+    ]
+    return weapon in top_weapons
+
+'''list deletion'''
+#Python has a built-in keyword del that deletes items from objects. 
+# In the case of a list, you can delete specific indexes or entire slices.
+
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# delete the fourth item
+del nums[3]
+print(nums)
+# Output: [1, 2, 3, 5, 6, 7, 8, 9]
+
+# delete the second item up to the fourth item
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+del nums[1:3]
+print(nums)
+# Output: [1, 4, 5, 6, 7, 8, 9]
+
+# delete all elements
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+del nums[:]
+print(nums)
+# Output: []
+
