@@ -281,3 +281,78 @@ del nums[:]
 print(nums)
 # Output: []
 
+'''tuples'''
+# a collection of data that are ordered and unchangeable - you can think of a tuple as a list with a fixed size
+#tuples are created with round brackets
+
+#While it's typically considered bad practice to store items of different types in a List it's not a problem with Tuples. Because they have a fixed size, it's easy to keep track of which indexes store which types of data.
+my_tuple = ("this is a tuple", 45, True)
+print(my_tuple[0])
+# this is a tuple
+print(my_tuple[1])
+# 45
+print(my_tuple[2])
+# True
+#Because Tuples hold their data, multiple tuples can be stored within a list.
+my_tuples = [("this is the first tuple in the list", 45, True),("this is the second tuple in the list", 21, False)]
+print(my_tuples[0][0]) # this is the first tuple in the list
+print(my_tuples[0][1]) # 45
+print(my_tuples[1][0]) # this is the second tuple in the list
+print(my_tuples[1][2]) # False
+
+def get_heroes():
+    heroes = [
+        ("Glorfindel",
+        2093,
+        True),
+        ("Gandalf",
+        1054,
+        False),
+        ("Gimli",
+        389,
+        False),
+        ("Aragorn",
+        87,
+        False),
+    ]
+
+    return heroes
+
+
+'''First Element in a list '''
+
+def get_first_item(items):
+    if len(items) == 0:
+        return "ERROR"
+    else:
+        return items[0]
+
+'''Reverse list'''
+def reverse_array(items):
+    #items = [1, 2, 3]
+    #return new list [3, 2, 1]
+    new_array = []
+    for x in range(len(items)- 1, -1, -1):
+        new_array.append(items[x])
+    return new_array
+
+'''FILTER MESSAGES'''
+
+def filter_messages(messages):
+    new_message = []
+    dang_count = []
+    for message in messages:
+        words = message.split()
+        good_words = []
+        removed_dangs = 0
+        for word in words:
+            if word == "dang":
+                removed_dangs += 1
+            else:
+                good_words.append(word)
+
+        joined_words = " ".join(good_words)
+        dang_count.append(removed_dangs)
+        new_message.append(joined_words)
+        
+    return new_message, dang_count
