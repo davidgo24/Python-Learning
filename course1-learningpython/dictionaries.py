@@ -130,3 +130,18 @@ for name in fruit_sizes:
 # name: apple, size: small
 # name: banana, size: large
 # name: grape, size: tiny
+
+'''final assignment '''
+def get_most_common_enemy(enemies_dict):
+    max_value = float('-inf')
+    new_popular_enemy = None
+    for enemy in enemies_dict:
+        enemies_value = enemies_dict[enemy]
+        if enemies_value > max_value:
+            max_value = enemies_value
+            new_popular_enemy = enemy
+    return new_popular_enemy
+            
+        
+        
+        
