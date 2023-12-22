@@ -51,3 +51,32 @@ def remove_duplicates(spells):
     new_set = set(spells)
     removed_dupes = list(new_set) # this is called a list comprehension
     return removed_dupes
+
+'''REMOVE ITEM FROM SET'''
+this_set = {"hello", "hi"}
+#to remove set
+this_set.remove{"hello"}
+
+'''Extra problems'''
+def remove_duplicates(lst):
+    john_set = set(lst)
+    return john_set
+
+
+'''Vowel counter'''
+def count_vowels(text):
+    standard_vowels = ["a", "e", "i", "o", "u"]
+    uppercase_vowels = [vowel.upper() for vowel in standard_vowels]
+    vowels_found = set()
+    vowel_counter = 0
+    for x in text:
+        if x in standard_vowels:
+            vowel_counter += 1
+            vowels_found.add(x)
+        elif x in uppercase_vowels:
+            vowel_counter +=1
+            vowels_found.add(x)
+    return vowel_counter, vowels_found
+ 
+            
+        
