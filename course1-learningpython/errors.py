@@ -35,7 +35,35 @@ def main():
             print(get_player_record(4))
         except Exception as e:
             print(e)
+# Don't edit below this line
+#code area 
+
+def get_player_record(player_id):
+    if player_id == 1:
+        return {"name": "Slayer", "level": 128}
+    if player_id == 2:
+        return {"name": "Dorgoth", "level": 300}
+    if player_id == 3:
+        return {"name": "Saruman", "level": 4000}
+    raise Exception("player id not found")
 
 
+main()
 
+#TRY/EXCEPT REVIEW
+#The try block is executed until an exception is raised or it completes, 
+# whichever happens first. In this case, a "divide by zero" error is raised because division by zero is impossible. 
+# The except block is only executed if an exception is raised in the try block. 
+# It then exposes the exception as data (e in our case) so that the program can handle the exception gracefully without crashing.
 
+#therefore
+#if no exceptions are raised in the try block, the except block will not execute
+
+def main():
+        print(get_player_record(1))
+        print(get_player_record(2))
+        print(get_player_record(3))
+        try: #this is the try block
+            print(get_player_record(4))
+        except Exception as e: #this is the except block 
+            print(e)
