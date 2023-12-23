@@ -78,3 +78,39 @@ def main():
 #internet lost
 #expected/handle
 #when an error happens, we must have code in place to handle the error. else it does become a bug in the sense that we are not handling it properly.
+
+'''syntax for raising exceptions'''
+raise Exception("something bad happened")
+#asssignment 
+def get_player_record(player_id):
+    if player_id == 1:
+        return {"name": "Slayer", "level": 128}
+    if player_id == 2:
+        return {"name": "Dorgoth", "level": 300}
+    if player_id == 3:
+        return {"name": "Saruman", "level": 4000}
+    raise Exception("player id not found")
+#. When you are able to detect that something is amiss, you should be raising the errors yourself, in addition to the "default" exceptions that the Python interpreter will raise.
+
+'''ASSSIGNMENT '''
+ def handle_get_player_record(player_id):
+    try:
+        return get_player_record(player_id)
+    except IndexError:
+        return "index is too high"
+    except Exception as e:
+        return e
+    
+    
+# Don't edit below this line
+
+
+def get_player_record(player_id):
+    if player_id < 0:
+        raise Exception("negative ids not allowed")
+    players = [
+        {"name": "Slayer", "level": 128},
+        {"name": "Dorgoth", "level": 300},
+        {"name": "Saruman", "level": 4000},
+    ]
+    return players[player_id]
