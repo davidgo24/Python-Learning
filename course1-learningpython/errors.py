@@ -67,3 +67,14 @@ def main():
             print(get_player_record(4))
         except Exception as e: #this is the except block 
             print(e)
+
+'''ERROR VS BUGS'''
+#a bug 
+#crashing
+#unexpectedly 
+#solution: we must fix this code
+
+#error
+#internet lost
+#expected/handle
+#when an error happens, we must have code in place to handle the error. else it does become a bug in the sense that we are not handling it properly.
