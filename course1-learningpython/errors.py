@@ -116,3 +116,4 @@ def get_player_record(player_id):
     return players[player_id]
 
 
+#errors 
