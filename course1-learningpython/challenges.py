@@ -24,3 +24,10 @@ def number_sum(n):
 
 
 '''Challenge #2: Minimum Numbers in Python'''
+def find_min(nums):
+    SMALLEST_NUM = float("inf")
+    for i in nums:
+        if i < SMALLEST_NUM:
+            SMALLEST_NUM = i 
+    return SMALLEST_NUM
+
