@@ -117,3 +117,15 @@ def get_player_record(player_id):
 
 
 #errors 
+def make_purchases(purchase_orders):
+    leftovers = []
+    for purchase_order in purchase_orders:
+        try:
+            price = purchase_order["price"]
+            money_available = purchase_order['money_available']
+            leftover = purchase(price, money_available)
+            leftovers.append(leftover)
+        except Exception as e:
+            print(f"Purchase exception: {e}")
+    return leftovers
+
