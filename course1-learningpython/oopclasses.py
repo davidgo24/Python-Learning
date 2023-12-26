@@ -170,4 +170,67 @@ class Wall:
         self.cost = self.height * self.armor
         return self.cost
 
-    
+'''words on functions'''
+#WHAT IS A FUNCTION?
+#A function is a piece of code that is called by a name. It can receive data to operate on through parameters and may, optionally, return data. 
+# All data that is passed to a function is explicitly passed through parameters.
+'''words on methods'''
+#WHAT IS A METHOD?
+#A method is a piece of code that is called by a name that is associated with an object. Methods and functions are similar but have two key differences.
+#A method is implicitly passed the object on which it was called. In other words, you won't see all the inputs in the parameter list
+#A method can operate on data that is contained within the class. In other words, you won't see all the outputs in the return statement.
+'''oop debate'''
+#THE OOP DEBATE
+#Because functions are more explicit, some developers argue that functional programming is better than object-oriented programming. 
+# In reality, neither paradigm is "better", and the best developers learn and understand both styles and use them as they see fit.
+#For example, while methods are more implicit and often make code more difficult to read
+# , they also make it easier to group a program's data and behavior in one place, which can lead to a more organized codebase.
+
+#functions are explicit in terms of the inputs and outputs
+#methods are implicit in terms of inputs and outputs since you use the objects from the class and they are not necessarily in explicitly declared in the parameter list
+
+'''Constructors or initializers'''
+
+#It's quite rare in the real world to see a class that defines properties in the way we've been doing it.
+class Soldier:
+    armor = 2
+    num_weapons = 2
+#instead we use a constructor or initializer 
+class Soldier:
+    def __init__(self):
+        self.armor = 2
+        self.num_weapons = 2
+
+
+class Soldier:
+    def __init__(self):
+        self.armor = 2
+        self.num_weapons = 2
+        #this is how we create a constructor using init
+        
+'''example of a constructor'''
+class Wall:
+    def __init__(self, depth, height, width):
+        self.depth = depth
+        self.height = height
+        self.width = width
+        self.volume = self.width * self.height * self.depth
+
+#__init__ is the name of the constructor name
+#think of it as the place where you can initialize the objects you will be using as a general template for the method 
+
+'''multiple objects'''
+#if a class is just a type, then an object is just an value.
+#You'll hear often that an object is an "instance" of a class. Let's look at what that word means.
+
+#my example of a constructor
+
+class NBAPlayers:
+    def __init__(self, name, number, ranking):
+        self.name = name 
+        self.number = number
+        self.ranking = ranking 
+        self.goat = f"{self.name} number {self.number}, ranked number {self.ranking}, is the goat"
+
+kobe_bryant = NBAPlayers(name = "kobe", number = 24, ranking = 1) #notice how we created an instance of the constuctor itself. while still being able to use the goat property. 
+print(kobe_bryant.goat)
