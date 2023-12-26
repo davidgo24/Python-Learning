@@ -147,5 +147,27 @@ class Wall:
 #can also be written as the following:
     def fortify(self):
         self.armor *= 2
+        
+'''methods can return values'''
+    #methods do not often return values, they usually mutate the objects/properties in the class. however, you in fact return values with methods.
+class NBAPlayers:
+    Player = 'Kobe'
     
+    def player_name(self):
+        return self.Player
+
+nba_star = NBAPlayers()
+
+NAME = nba_star.player_name(Player)
+print(NAME)
+    
+'''method return example'''
+class Wall:
+    armor = 10
+    height = 5
+
+    def get_cost(self):
+        self.cost = self.height * self.armor
+        return self.cost
+
     
