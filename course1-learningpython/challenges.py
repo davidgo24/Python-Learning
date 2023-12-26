@@ -31,3 +31,29 @@ def find_min(nums):
             SMALLEST_NUM = i 
     return SMALLEST_NUM
 
+
+'''Challenge #3: removing numbers'''
+def remove_nonints(nums):
+    new_list = []
+    for num in nums:
+        if type(num) == int:
+            new_list.append(num)
+    return new_list
+
+'''Challenge #4: factorial scoreboard'''
+#my solution 
+def factorial(num):
+    factorial_score = 1
+    for num in range(1, num+1):
+        factorial_score = num * factorial_score
+    return factorial_score
+
+#or *= multiplier can be used 
+
+def factorial(num):
+    factorial = 1
+    for i in range(1, num + 1):
+        factorial *= i
+    return factorial
+
+        
