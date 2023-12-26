@@ -225,6 +225,7 @@ class Wall:
 
 #my example of a constructor
 
+
 class NBAPlayers:
     def __init__(self, name, number, ranking):
         self.name = name 
@@ -234,3 +235,8 @@ class NBAPlayers:
 
 kobe_bryant = NBAPlayers(name = "kobe", number = 24, ranking = 1) #notice how we created an instance of the constuctor itself. while still being able to use the goat property. 
 print(kobe_bryant.goat)
+
+#second object or instance of my nbaplayers class
+lebron_james = NBAPlayers(name = "LeBron", number = 6, ranking = 2) 
+#third object or instance of my nbaplayers class
+steph_curry = NBAPlayers(name = "Curry", number = 30, ranking = 3)
