@@ -98,3 +98,54 @@ print(get_players.KOBE)
 
 #the instances or objects are also referred to as properties in a class
     
+
+'''Why are classes useful?'''
+
+#classes are useful because they allow methods to be applied to them. in comparison to dictionaries which are standalone lists. 
+
+'''Methods'''
+# a method is a function that is associated with a class. this function has access to the objects in the class. or said as, "has access to all the properties of the objecrt"
+
+'''the special 'SELF VALUE' '''
+#methods are nested within the class declaration
+#methods always take a special parameter as their first argument known as 'self'. The self variable is a reference to the object itself. by using it, we can read and update properties of the object.
+object.method()
+
+class Soldier:
+    health = 5
+
+    def take_damage(self, damage):
+        self.health -= damage
+
+soldier_one = Soldier()
+soldier_one.take_damage(2)
+print(soldier_one.health)
+# prints "3"
+
+'''Personal Example of how i used the 'self value''''
+class NbaPlayers:
+    KOBE = 24
+    LEBRON = 6
+    CURRY = 30
+    #we want to apply a method that updates a player's number
+    def change_numbers(self, number):
+            self.LEBRON = number
+
+get_players = NbaPlayers()
+get_players.change_numbers(23)
+print(get_players.LEBRON)
+#prints the output: 23 when we call the LEBRON property
+
+class Wall:
+    armor = 10
+    height = 5
+
+    def fortify(self):
+        self.armor = self.armor * 2
+    #using self is needed. it helps us tell the computer that we are referencing the class itself and its property
+
+#can also be written as the following:
+    def fortify(self):
+        self.armor *= 2
+    
+    
