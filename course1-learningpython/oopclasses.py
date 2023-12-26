@@ -223,7 +223,7 @@ class Wall:
 #if a class is just a type, then an object is just an value.
 #You'll hear often that an object is an "instance" of a class. Let's look at what that word means.
 
-#my example of a constructor
+'''my example of a constructor'''
 
 
 class NBAPlayers:
@@ -240,3 +240,102 @@ print(kobe_bryant.goat)
 lebron_james = NBAPlayers(name = "LeBron", number = 6, ranking = 2) 
 #third object or instance of my nbaplayers class
 steph_curry = NBAPlayers(name = "Curry", number = 30, ranking = 3)
+
+'''Assignment of Multiple Objects'''
+def main():
+    aragorn_brawler = Brawler(4, 4, "Aragorn")
+    gimli_brawler = Brawler(2,7, "Gimli")
+    legolas_brawler = Brawler(7,7, "Legolas")
+    frodo_brawler = Brawler(3,2, "Frodo")
+    fight(aragorn_brawler, gimli_brawler)
+    fight(legolas_brawler, frodo_brawler)
+
+#note when creating an instance, you must assure you have filled in the required arguments by the method
+
+class Archer:
+    def __init__(self, name, health, num_arrows):
+        self.name = name
+        self.health = health
+        self.num_arrows = num_arrows
+
+    def get_shot(self): #instance of the constructor
+        if self.health > 0:
+            self.health -= 1
+        if self.health == 0:
+            raise Exception(f"{self.name} is dead")
+
+    def shoot(self, target): #instance of the method get_shot and constructor combined
+        if self.num_arrows < 1:
+            raise Exception(f"{self.name} can't shoot")
+        print(f"{self.name} shoots {target.name}")
+        self.num_arrows -= 1
+        target.get_shot() #notice how we use target as an instance of get_shot where we would assign target a name, health, etc. 
+        
+'''Class Variables vs Instance Variables'''
+# instance variables 
+#Instance variables vary from object to object and are declared in the constructor. - kind of like a temporary template thats customizable without changing default for good
+
+
+class Wall:
+    def __init__(self):
+        self.height = 10
+
+south_wall = Wall()
+south_wall.height = 20 # only updates this instance of a wall
+print(south_wall.height)
+# prints "20"
+
+north_wall = Wall()
+print(north_wall.height)
+# prints "10"
+
+
+#class variables 
+
+#Class variables remain the same between instances of the same class and are declared at the top level of a class definition.
+
+class Wall:
+    height = 10
+
+south_wall = Wall()
+print(south_wall.height)
+# prints "10"
+
+Wall.height = 20 # updates all instances of a Wall
+
+print(south_wall.height)
+# prints "20"
+#*be careful
+
+'''instance variable or class variable??'''
+#Generally speaking, stay away from class variables. 
+# Just like global variables, class variables are usually a bad idea because they make it hard to keep track of which parts of your program are making data updates.
+# However, it is important to understand how they work because you may see them out in the wild.
+
+'''example of fixing a class variable'''
+
+#initial code
+class Dragon:
+    element = "ice"
+
+    def __init__(self, element):
+        return
+
+    def get_breath_damage(self):
+        if self.element == "fire":
+            return 300
+        if self.element == "ice":
+            return 150
+        return 0
+
+#post-code using instance variables
+class Dragon:
+    def __init__(self, element):
+        self.element
+
+    def get_breath_damage(self):
+        if self.element == "fire":
+            return 300
+        if self.element == "ice":
+            return 150
+        return 0
