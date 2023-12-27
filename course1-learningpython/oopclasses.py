@@ -370,3 +370,25 @@ class Library:
             if search_string.lower() in book.title.lower() or search_string.lower() in book.author.lower():
                 search_match.append(book)
         return search_match
+        
+        
+###Employee Management
+
+class Employee:
+    # Initialize class variables
+    company_name = "Dev.boot"
+    total_employees = 0
+
+    # Constructor
+    def __init__(self, first_name, last_name, id, position, salary):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.id = id
+        self.position = position
+        self.salary = salary
+
+        Employee.total_employees +=1 #notice how we have to call the class here since total_employees is a class variable.
+
+    # Getter Method
+    def get_name(self): #using the getter method is known as encapsulating
+        return f"{self.first_name} {self.last_name}"
