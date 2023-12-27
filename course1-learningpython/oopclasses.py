@@ -339,3 +339,34 @@ class Dragon:
         if self.element == "ice":
             return 150
         return 0
+
+
+'''Extra Problems'''
+
+#local library 
+
+class Book:
+    def __init__(self, title, author):
+        self.title = title 
+        self.author = author
+
+
+class Library:
+    def __init__(self, name):
+        self.name = name
+        self.books = []
+
+    def add_book(self, book):
+        self.books.append(book)
+
+    def remove_book(self, book):
+        for lib_book in self.books:
+            if (book.title == lib_book.title and book.author == lib_book.author):
+                self.books.remove(lib_book)
+                
+    def search_books(self, search_string):
+        search_match = []
+        for book in self.books:
+            if search_string.lower() in book.title.lower() or search_string.lower() in book.author.lower():
+                search_match.append(book)
+        return search_match
