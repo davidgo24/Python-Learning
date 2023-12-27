@@ -43,3 +43,53 @@ class Wizard:
 
     def get_health(self):
         return self.__health
+'''operating on an instance of a class'''
+
+class Wizard:
+    def __init__(self, name):
+        self.__mana = 45
+        self.__health = 65
+        self.name = name
+
+    def get_mana(self):
+        return self.__mana
+
+    def get_health(self):
+        return self.__health
+
+    def get_fireballed(self):
+        self.__health -= 30 
+
+    def drink_mana_potion(self):
+        self.__mana += 40 
+
+'''completing a method'''
+class Wizard:
+    def cast_fireball(self, target):
+        fireball_cost = 20
+        if self.__mana < fireball_cost:
+            raise Exception(f"{self.name} cannot cast fireball")
+        print(f"{self.name} casts fireball at {target.name}")
+        self.__mana -= fireball_cost
+        target.get_fireballed()
+
+
+'''encapsulation does not make systems more secure'''
+#it is intended to be used for cleaner code. 
+#so developers working with the code do not have to worry about it. 
+
+'''encapsulation enforcing in python'''
+#Python is a very dynamic language, and that makes it difficult for the interpreter to enforce some of the safeguards that languages like Go do.
+# That's why encapsulation in Python is achieved mostly by convention rather than by force.
+
+#Prefixing methods and properties with a double underscore is a strong suggestion to the users of your class that they shouldn't be touching that stuff.
+# If a developer wanted to break convention, there are ways to get around the double underscore rule.
+
+class Wall:
+    def __init__(self, height):
+        # this warns developers to not
+        # access the `__height` property directly
+        self.__height = height
+
+    def get_height(self):
+        return self.__height
