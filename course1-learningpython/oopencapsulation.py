@@ -118,3 +118,30 @@ class BankAccount:
 bankaccount_david = BankAccount(1234, 50)
 bankaccount_davidtwentyfive=bankaccount_david.deposit(25)
 print(bankaccount_davidtwentyfive)
+
+
+'''Bank Account Example solution by David'''
+
+class BankAccount:
+    def __init__(self, account_number, initial_balance):
+        self.__account_number = account_number 
+        self.__balance = initial_balance 
+
+    def get_account_number(self):
+        return self.__account_number
+
+    def get_balance(self):
+        return self.__balance 
+
+    def deposit(self, amount):
+        if amount <= 0:
+            raise ValueError("Cannot deposit zero or negative funds")
+        self.__balance += amount #use the increment tool to add to the initial balance - initially i was returning the calculation only so it was not reflecting on the initial balance
+
+    def withdraw(self, amount): 
+        if amount <= 0:
+            raise ValueError("Cannot withdraw zero or negative funds")
+        if amount > self.__balance:
+            raise ValueError("Insufficient funds")
+        self.__balance -= amount #use the decrement tool to subtract from the initial balance count
+            
