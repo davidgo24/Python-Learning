@@ -93,3 +93,28 @@ class Wall:
 
     def get_height(self):
         return self.__height
+
+
+'''personal practice with bank account challenge'''
+class BankAccount:
+    def __init__(self, account_number, initial_balance):
+        self.account_number = account_number
+        self.balance = initial_balance
+
+    def get_account_number(self):
+        return self.account_number
+
+    def get_balance(self):
+        return self.balance 
+
+    def deposit(self, amount):
+        if amount <= 0:
+            raise ValueError("Cannot deposit zero or negative funds")
+        return amount + self.balance
+
+    def withdraw(self, amount):
+        pass
+
+bankaccount_david = BankAccount(1234, 50)
+bankaccount_davidtwentyfive=bankaccount_david.deposit(25)
+print(bankaccount_davidtwentyfive)
