@@ -145,3 +145,40 @@ class BankAccount:
             raise ValueError("Insufficient funds")
         self.__balance -= amount #use the decrement tool to subtract from the initial balance count
             
+'''Student Records assignment by david'''
+class Student:
+    def __init__(self, name, scores):
+        self.name = name
+        self.scores = scores
+        self.__courses = {}
+        
+
+    def calculate_letter_grade(self, score):
+        if score >= 90:
+            return "A"
+        elif (score >= 80 and score <=89):
+            return "B"
+        elif (score >=70 and score <=79):
+            return "C"
+        elif (score >=60 and score <69):
+            return "D"
+        return "F"
+
+    def add_course(self, course_name, score): 
+        #It should calculate_letter_grade based on the score. 
+        #It should set the course_name as a key in the courses dictionary and the calculated letter grade as the corresponding value.
+        letter_grade = self.calculate_letter_grade(score) #make sure to include self
+        self.__courses[course_name] = letter_grade
+        
+
+    def get_courses(self):
+        #It should return the private __courses dictionary.
+        return self.__courses
+    
+    
+'''a few words on why we use self'''
+
+# #Method Invocation: When you call a method on an instance of a class,
+# you don't explicitly pass the instance as an argument. Python automatically does this for you.
+self.calculate_letter_grade(score)
+Student.calculate_letter_grade(self, score)
