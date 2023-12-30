@@ -131,3 +131,60 @@ class Dragon(Unit):
         r1 = Rectangle(x_1, y_1, x_2, y_2)
         return r1.overlaps(self.__hit_box)
 
+'''example 5: Operator overloading'''
+class Sword:
+    def __init__(self, sword_type):
+        self.sword_type = sword_type
+
+    def __add__(self, other):
+        if self.sword_type == "bronze" and other.sword_type == "bronze":
+            return Sword("iron")
+        elif self.sword_type == "iron" and other.sword_type == "iron":
+            return Sword("steel")
+        raise Exception("can not craft")
+            
+        
+
+#Another kind of built-in polymorphism in Python is the ability to override how an operator works. 
+# For example, the + operator works for built-in types like integers and strings.
+
+print(3 + 4)
+# prints "7"
+
+print("three " + "four")
+# prints "three four"
+
+#Custom classes on the other hand don't have any built-in support for those operators:
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+
+p1 = Point(4, 5)
+p2 = Point(2, 3)
+p3 = p1 + p2
+# TypeError: unsupported operand type(s) for +: 'Point' and 'Point'
+
+
+#However, we can add our own support! 
+# If we create an __add__(self, other) method on our class, the Python interpreter will use it when instances of the class are being added with the + operator.
+# Here's an example:
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, point):
+        x = self.x + point.x
+        y = self.y + point.y
+        return Point(x, y)
+
+p1 = Point(4, 5)
+p2 = Point(2, 3)
+p3 = p1 + p2
+# p3 is (6, 8)
+
+
+
