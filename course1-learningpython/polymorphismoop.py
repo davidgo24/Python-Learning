@@ -186,5 +186,22 @@ p2 = Point(2, 3)
 p3 = p1 + p2
 # p3 is (6, 8)
 
+#As we discussed in the last assignment, operator overloading is the practice of defining custom behavior for standard Python operators. Here's a list of how the operators translate into method names.
+
+Operation	Operator	Method
+Addition	+	add
+Subtraction	-	sub
+Multiplication	*	mul
+Power	**	pow
+Division	/	truediv
+Floor Division	//	floordiv
+Remainder (modulo)	%	mod
+Bitwise Left Shift	<<	lshift
+Bitwise Right Shift	>>	rshift
+Bitwise AND	&	and
+Bitwise OR	|	or
+Bitwise XOR	^	xor
+Bitwise NOT	~	invert
+
 
 
