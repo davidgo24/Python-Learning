@@ -96,3 +96,38 @@ class Rectangle:
         if self.y1 < self.y2:
             return self.y1
         return self.y2
+    
+class Unit:
+    def __init__(self, name, pos_x, pos_y):
+        self.name = name
+        self.pos_x = pos_x
+        self.pos_y = pos_y
+
+    def in_area(self, x_1, y_1, x_2, y_2):
+        return (
+            self.pos_x >= x_1
+            and self.pos_x <= x_2
+            and self.pos_y >= y_1
+            and self.pos_y <= y_2
+        )
+
+'''example 4: continuation - hitbox'''
+class Dragon(Unit):
+    def __init__(self, name, pos_x, pos_y, height, width, fire_range):
+        super().__init__(name, pos_x, pos_y)
+        self.fire_range = fire_range
+        self.height = height
+        self.width = width
+        half_height = height / 2
+        half_width = width / 2
+        self.__hit_box = Rectangle(
+            pos_x - half_width,
+            pos_y - half_height,
+            pos_x + half_width,
+            pos_y + half_height,
+        )
+
+    def in_area(self, x_1, y_1, x_2, y_2):
+        r1 = Rectangle(x_1, y_1, x_2, y_2)
+        return r1.overlaps(self.__hit_box)
+
