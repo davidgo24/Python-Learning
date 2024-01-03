@@ -56,3 +56,21 @@ def add_border(document):
     title = document.split("\n")[0]
     border = "*" * len(title)
     return document.replace(title, title + "\n" + border)
+
+'''Functional programming vs OOP''' #- my goal will be to write an article on fucntional programming - research one primary source - pref. a book 
+
+#OOP and functional approaches aren't even really enemies! The core pillars of OOP are:
+
+#Encapsulation
+#Polymorphism
+#Abstraction
+#Inheritance
+
+#Of those four, the only 
+# one that really conflicts with functional programming is inheritance (and the mutable classes that typically come along with it). 
+# The other three are perfectly compatible with functional programming, and functional programmers use them all the time.
+
+'''Immutability'''
+#A core tenet of functional programming is that data should be immutable. 
+# Once a value is created, it cannot be changed. This is in contrast to mutable data, which can be changed after it is created.
+
