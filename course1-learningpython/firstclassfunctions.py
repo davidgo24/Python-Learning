@@ -31,3 +31,23 @@ def categorize_file(filename):
     }.get(extension, "Unknown")
 
     return get_category(filename[filename.rfind(".") :])
+
+'''First Class and Higher Order Functions'''
+
+#a programming language is said to support first-class 
+#functions in that language are treated like any other variable 
+#the function can be passed as an argument to other functions, 
+#can be returned by another function and can be assigned as a value to a variable 
+
+'''first-class function'''
+#a function that is treated like any other value 
+
+def square(x):
+    return x * x
+
+# assigns function to a variable 
+
+
+'''higher-order function'''
+#a function that accepts another function as an arg or returns a function
+
