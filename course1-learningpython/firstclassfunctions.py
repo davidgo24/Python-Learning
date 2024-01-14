@@ -78,3 +78,9 @@ def convert_line(line):
     return line
 '''filter'''
 #the built-in function 'filter' takes a function and an iterable, in this case a list, and returns a new iterable that only contains elements from the original iterable where the result of the function of that item returned true
+
+'''filer assignment'''
+def remove_invalid_lines(document):
+    return '\n'.join(
+        filter(lambda x: not x.startswith('-'), document.split('\n'))
+    )
