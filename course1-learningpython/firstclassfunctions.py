@@ -68,7 +68,7 @@ print(squares)
 def change_bullet_style(document):
     return "\n".join(map(convert_line, document.split('\n')))
 # Don't edit below this line
-
+'''Map'''
 
 def convert_line(line):
     old_bullet = "-"
@@ -76,3 +76,5 @@ def convert_line(line):
     if len(line) > 0 and line[0] == old_bullet:
         return new_bullet + line[1:]
     return line
+'''filter'''
+#the built-in function 'filter' takes a function and an iterable, in this case a list, and returns a new iterable that only contains elements from the original iterable where the result of the function of that item returned true
