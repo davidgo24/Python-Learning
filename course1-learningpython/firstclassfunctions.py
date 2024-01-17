@@ -84,3 +84,53 @@ def remove_invalid_lines(document):
     return '\n'.join(
         filter(lambda x: not x.startswith('-'), document.split('\n'))
     )
+
+'''reduce'''
+#the functtools.reduce() function is a function
+#that takes a function and a list of values and applies
+#the function to each value in the list, accumulating
+#a result as it goes.
+# import the functools module
+# from the standard library
+
+import functools
+
+def add(sum, y):
+    return sum + y
+
+numbers = [1, 2, 3, 4, 5]
+sum = functools.reduce(add, numbers)
+print(sum)
+# 15
+
+'''how do map, filter, and reduce help with functional programming?'''
+
+#example of imperative code to calculate a factorial of num
+def factorial(n):
+    # a procedure that continuously multiplies
+    # the current result by the next number
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
+
+
+''' example of higher-order function like reduce'''
+#a higher-order function like reduce will allow
+#us to remove the stateful iteration and mutation
+#of the result variable
+
+import functools
+
+def mul(x, y):
+    return x * y
+
+def factorial(n):
+    return functools.reduce(mul, range(1, n + 1))
+
+#in the functional example
+#we are simply composing and combining functions
+#to get the result we want 
+
+#we are doing our best to avoid keeping track of state
+#and mutating variables
