@@ -134,3 +134,23 @@ def factorial(n):
 
 #we are doing our best to avoid keeping track of state
 #and mutating variables
+
+
+import functools
+
+
+def accumulate(doc, sentence):
+    return doc + '. ' + sentence
+#print(accumulate('hi', 'hello'))
+
+def accumulate_first_sentences(sentences, n):
+    if not sentences:
+        return ''
+    if n < 1:
+        return ''
+    newdoc = functools.reduce(accumulate, sentences[:n])
+    return newdoc + '.'
+
+print(accumulate_first_sentences(['kobe', 'is', 'goat'], 2))
+
+
